@@ -1,0 +1,690 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out, color 0s ease-in-out;
+}
+
+:root {
+  --text-color: #212121;
+  --title-color: #002265;
+  --title-color2: #14279B;
+  --bg-color: #4581F6;
+  --box-shadow-color: rgba(45, 134, 218, 0.5);
+  --light-color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+::-webkit-scrollbar {
+  width: 0.25em;
+}
+
+body::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color);
+  border-radius: 3px;
+}
+
+body {
+  font-family: "Poppins";
+  color: var(--text-color);
+  background-image: url(../images/background.png);
+}
+
+div.theme {
+  position: fixed;
+  top: 4rem;
+  right: 0.5rem;
+  font-size: 2rem;
+  z-index: 10;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+div.theme i[data-theme="dark"] {
+  color: var(--title-color);
+}
+
+a[href="#up"] {
+  display: block;
+  position: fixed;
+  z-index: 10;
+  bottom: 6.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 1px var(--box-shadow-color);
+  background-color: #f9f9f9;
+}
+
+a[href="#up"] i {
+  position: absolute;
+  font-size: 2.25rem;
+  color: var(--bg-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1rem 0;
+  z-index: 10;
+  box-shadow: 0 -3px 10px 0px var(--box-shadow-color);
+}
+
+header > div {
+  margin: 0 5vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 2.75rem;
+}
+
+header div.logo span, section h2 span {
+  font-weight: 400;
+  color: var(--title-color2);
+}
+
+header div.logo span.strong, section h2 span.strong {
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+header nav {
+  display: flex;
+  gap: 0.5rem 2.75rem;
+  color: var(--text-color);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+header a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+header a br, header a div {
+  display: none;
+}
+
+header a:hover {
+  border-bottom: 2px solid var(--title-color2);
+  color: var(--title-color2);
+  transition: all 0s linear;
+}
+
+header a:active {
+  box-shadow: 0 5px 10px -8px var(--box-shadow-color);
+}
+
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section.section {
+  display: flex;
+  margin: 0 auto;
+  width: 80vw;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 0;
+}
+
+section.section > div {
+  gap: 4rem;
+}
+
+section.section > div > div {
+  border-radius: 0.75rem;
+  box-shadow: 0 0 10px 1px var(--box-shadow-color);
+  padding: 1rem;
+}
+section.section h3 {
+  color: var(--title-color);
+  margin: 1rem 0;
+}
+
+section.section div.img {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 3rem;
+}
+
+section.section div.two-bloks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+section.section div.two-bloks > div {
+  background-color: var(--light-color);
+}
+
+
+
+section#about {
+  display: flex;
+  margin: 0 auto;
+  width: 85vw;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1000px;
+  padding: 6.75rem 0 5rem;
+}
+
+section#about div.about-me {
+  flex-grow: 1;
+}
+
+section#about div.about-me p {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  margin: 0;
+}
+
+section#about div.about-me h1 {
+  font-size: 2.25rem;
+  color: var(--title-color);
+  margin: 0.5rem 0 1.5rem;
+}
+
+div.photo {
+  background-image: url(../images/photo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 31.25rem;
+  height: 29.25rem;
+  border-radius: 0 0 50% 50% / 0 0 5rem 5rem;
+  flex-shrink: 0.3;
+  animation: move 1s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2px);
+  }
+}
+
+
+
+section#portfolio {
+  width: 89vw;
+}
+
+section#portfolio > div {
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+section#portfolio div.project {
+  position: relative;
+  width: 21rem;
+  height: 23rem;
+  overflow: hidden;
+  padding: 0;
+  box-shadow: 0 0 10px 1px var(--box-shadow-color);
+}
+
+section#portfolio div.project img {
+  position: absolute;
+  height: 100%;
+  transform-origin: center;
+}
+
+section#portfolio div.project div {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  z-index: -1;
+}
+
+section#portfolio div.project > div {
+  height: 100%;
+}
+
+section#portfolio div.project div.link-block {
+  top: 80%;
+  transform: translate(0, -50%);
+}
+
+section#portfolio div.project div.link-block a {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--light-color);
+  border-radius: 0.75rem;
+  font-size: 1.75rem;
+  margin: 0 1rem;
+}
+
+section#portfolio div.project div.link-block a i {
+  vertical-align: middle;
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out;
+}
+
+section#portfolio div.project div.link-block a:hover {
+  background-color: rgb(45, 134, 218);
+}
+
+section#portfolio div.project div.link-block a:hover i {
+  color: var(--light-color);
+}
+
+section#portfolio div.project:hover img {
+  transform: scale(120%) rotate(5deg);
+}
+
+section#portfolio div.project:hover > div {
+  z-index: 1;
+  background: var(--box-shadow-color);
+}
+
+section#portfolio div.project:hover div.link-block {
+  z-index: 2;
+  top: 50%;
+}
+
+
+
+section#education div:first-of-type div.img {
+  background-image: url(../images/bsuir-logo.png);
+}
+
+section#education div:last-of-type > a div.img {
+  background-image: url(../images/logo_it_step.jpg);
+  height: 3.5rem;
+}
+
+
+
+section#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+section#contact h3 {
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  margin: 0.25em 0 1em;
+}
+
+section#contact > div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+section#contact div.contacts {
+  background-color: var(--bg-color);
+  color: var(--light-color);
+  padding: 2rem 3rem;
+  padding-left: max(2rem, 5vw);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+section#contact div.contacts a {
+  color: var(--light-color);
+}
+
+section#contact div.contacts h5 {
+  font-size: 22px;
+  margin-bottom: 1.5rem;
+}
+
+section#contact div.contacts h6 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+section#contact div.contacts h6 i {
+  margin-right: 0.5rem;
+}
+
+section#contact div.other-contact-links {
+  display: flex;
+  padding-top: 1rem;
+  font-size: 1.6rem;
+  gap: 4rem;
+}
+
+section#contact div.other-contact-links div {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 50%;
+}
+
+section#contact div.other-contact-links div:last-of-type {
+  align-items: center;
+}
+
+section#contact div.other-contact-links div:hover {
+  background-color: rgba(26, 102, 252, 0.8784313725);
+  transition: all 0.3s ease-in-out 0s;
+  transform: scale(105%);
+  transform-origin: center;
+}
+
+section#contact div.email form {
+  padding: 3rem;
+}
+
+section#contact div.email form div {
+  margin-bottom: 1rem;
+}
+
+section#contact div.email label {
+  font-weight: 600;
+}
+
+section#contact div.email .form-control {
+  font-family: inherit;
+  appearance: none;
+  display: block;
+  width: 90%;
+  border: none;
+  border-bottom: 2px solid #7e7e7e;
+  padding: 0.375rem 0.75rem;
+  padding-right: calc(1.5em + 0.75rem);
+  font-size: 1rem;
+  outline: none;
+  background-color: transparent;
+  transition: all 0s ease;
+}
+
+section#contact div.email .form-control:focus {
+  box-shadow: none;
+  border-bottom: 2px solid var(--bg-color);
+}
+
+section#contact div.email .form-control:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: #dc3545;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+section#contact div.email .form-control:valid {
+  border-color: #198754;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+section#contact div.email textarea {
+  resize: vertical;
+  height: 1rem;
+  min-height: calc(1em + 0.55rem);
+}
+
+section#contact div.email button {
+  background-color: var(--light-color);
+  color: var(--bg-color);
+  border: 1px solid var(--bg-color);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+section#contact div.email button:hover {
+  background-color: var(--bg-color);
+  color: var(--light-color);
+}
+
+section#contact div.email button:active {
+  box-shadow: 0 0 10px 0 var(--bg-color);
+}
+
+
+
+footer {
+  background-color: var(--bg-color);
+  color: var(--light-color);
+  text-align: center;
+  padding: 1.5rem;
+  white-space: pre-wrap;
+  margin-top: 2rem;
+}
+
+footer em {
+  font-size: 0.9em;
+  font-style: oblique;
+}
+
+
+
+@media (max-width: 800px) {
+  body {
+    min-width: 325px;
+  }
+
+  div.theme {
+    top: 5.5rem;
+  }
+
+  header {
+    padding-top: 0.1rem;
+    padding-bottom: 0.3rem;
+  }
+
+  header > div {
+    margin: 0 5vw;
+    width: auto;
+    display: block;
+    text-align: center;
+  }
+
+  header div.logo {
+    display: none;
+  }
+
+  header nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    justify-items: center;
+    justify-content: space-evenly;
+  }
+
+  header a {
+    display: block;
+    font-size: 0.75rem;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  header a div {
+    display: block;
+    font-size: 1.5rem;
+    position: relative;
+    top: 0.7rem;
+  }
+
+  header a br {
+    display: block;
+  }
+
+  header a:hover {
+    border: none;
+  }
+
+  header a:hover div {
+    top: 0.2rem;
+  }
+
+  header a:active {
+    box-shadow: none;
+  }
+
+  main {
+    gap: 0;
+  }
+
+  section.section > div {
+    gap: 3rem;
+  }
+
+  section#about {
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  section#about div.about-me {
+    margin: 0 min(5vw, 4rem);
+  }
+
+  section#about div.about-me p {
+    font-size: 1.25rem;
+  }
+
+  section#about div.about-me h1 {
+    font-size: 1.75rem;
+  }
+
+  div.photo {
+    width: 70vw;
+    height: calc(70vw - 2rem);
+  }
+
+  section#contact > div {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+
+  section#contact div.contacts {
+    padding-right: 1rem;
+    padding-left: 2rem;
+    border-radius: 0 0 0 0;
+  }
+
+  section#contact div.other-contact-links {
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  section#contact div.email form {
+    padding: 2rem;
+  }
+}
+
+
+@media (max-width: 560px) {
+  section.section {
+    width: 90vw;
+    gap: 3rem;
+  }
+
+  section.section > div {
+    gap: 2rem;
+  }
+
+  section.section div.two-bloks {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  
+  div.photo {
+    width: 80vw;
+    height: calc(80vw - 2rem);
+  }
+}
+
+@media (max-width: 430px) {
+  section#about {
+    transition: all 0s linear;
+  }
+
+  section#portfolio div.project {
+    width: min(21rem, 80vw);
+    height: calc(min(21rem, 80vw) + 2rem);
+  }
+
+  section#contact div.contacts, section#contact div.email form {
+    padding-left: 1.5rem;
+  }
+
+  section#contact h3 {
+    letter-spacing: 0.3rem;
+  }
+}
+
+
+@media (max-width: 325px) {
+  header {
+    position: sticky;
+    width: calc(325px - 0.4rem);
+    top: 0;
+  }
+
+  section#about {
+    padding-top: 1.75rem;
+  }
+
+  section#about div.about-me {
+    margin: 0 15px;
+  }
+
+  div.photo {  
+    width: 16.25rem;
+    height: 14.25rem;
+  }
+
+  section#portfolio div.project {
+    width: 15rem;
+    height: 17rem;
+  }
+}

@@ -1,0 +1,7 @@
+i.change-theme[data-theme="dark"] {
+    display: block;
+}
+
+i.change-theme[data-theme="light"] {
+    display: none;
+}

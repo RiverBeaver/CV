@@ -1,0 +1,86 @@
+:root {
+    --text-color: aliceblue;
+    --bg-color: #1c50b6;
+    --title-color: #0485ff;
+    --title-color2: #d9dae3;
+    --box-shadow-color: rgba(45, 134, 218, 0.5);
+}
+  
+body {
+    background-color: black;
+}
+
+a[href="#up"] {
+    background-color: #1c50b6;
+}
+
+a[href="#up"] i {
+    color: var(--text-color);
+}
+
+header {
+    background-color: rgba(4, 4, 60, 0.8509803922);
+}
+
+header a:hover, header a:hover div {
+    color: #4eb9ff;
+}
+
+section.section div.two-bloks > div {
+    background-color: #10092c;
+}
+
+section#portfolio div.project div.link-block a {
+    background-color: #212121;
+}
+
+section#portfolio div.project div.link-block a i {
+    vertical-align: middle;
+    color: var(--text-color);
+}
+
+section#portfolio div.project div.link-block a:hover {
+    background-color: #2323bf;
+}
+
+section#education div:first-of-type div.img {
+    filter: invert(100%) hue-rotate(180deg) brightness(2) drop-shadow(0 0 10px black);
+}
+
+section#education div:last-of-type > a div.img {
+    filter: invert(100%) hue-rotate(180deg) brightness(2.3) drop-shadow(0 0 10px black);
+}
+
+section#contact div.other-contact-links div:hover {
+    background-color: rgba(8, 60, 160, 0.8784313725);
+}
+
+section#contact div.email .form-control {
+    color: var(--text-color);
+    border-bottom: 2px solid #a7a7a7;
+}
+
+section#contact div.email .form-control:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: #a9222f;
+}
+
+section#contact div.email .form-control:valid {
+    border-color: #1e6b47;
+}
+
+section#contact div.email button {
+    background-color: #1c50b6;
+    color: var(--text-color);
+}
+
+section#contact div.email button:hover {
+    box-shadow: 0 0 10px 3px #1c50b6;
+}
+
+i.change-theme[data-theme="dark"] {
+    display: none;
+}
+
+i.change-theme[data-theme="light"] {
+    display: block;
+}
